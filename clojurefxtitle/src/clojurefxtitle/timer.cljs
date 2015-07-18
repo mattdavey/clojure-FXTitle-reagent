@@ -15,5 +15,5 @@
     (fn []
       (js/setTimeout #(reset! seconds-elapsed (rand-price whole_number)) 1000)
 ;;      (js/setTimeout #(swap! seconds-elapsed inc) 1000)
-      [:div {:style {:background "red" :width "150" :float "left"} }
+      [:div {:style {:background "red" :width "150" :float "left" :text-align "center"} }
        label (gstring/format " %0.3f" (/ @seconds-elapsed 1000) )])))

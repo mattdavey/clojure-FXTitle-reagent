@@ -19,20 +19,26 @@
 ;;    ]
     ])
 
-           
-(defn hello-world []
-  [:div {:style {:background "green" :width "300" :padding "0" } }
-    [:h1 {:style {:text-align "center" :padding "0" :margin "0" }} (:text @app-state) ]
+
+(defn fxtile []
+  [:div {:style {:background "green" :width "300" :float "left" :border-style "solid"} }
+    [:h1 {:style {:text-align "center" :margin "0" }} (:text @app-state) ]
       [simple-component]
-        [:div {:style {:float "left" :clear "none" :width "100%" }}
+        [:div
           [t/timer-component "Buy"]
           [t/timer-component "Sell"]
         ]
       ])
 
-(reagent/render-component [hello-world]
-                          (. js/document (getElementById "app")))
+(defn dashboard []
+  [:div {:style {:background "yellow" :width "100%"} }
+    [fxtile]
+    [fxtile]
+  ]
+)
 
+(reagent/render-component [dashboard]
+                          (. js/document (getElementById "app")))
 
 (defn on-js-reload []
   ;; optionally touch your app-state to force rerendering depending on
