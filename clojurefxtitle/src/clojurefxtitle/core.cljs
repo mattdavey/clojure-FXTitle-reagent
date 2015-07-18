@@ -10,7 +10,13 @@
 
 ;; define your app data so that it doesn't get over-written on reload
 
-(defonce app-state (atom {:text "USDGBP"}))
+(defonce app-state (atom {:text "FX Dashboard"
+                        :counters {"USDGBP" {:id 1
+                                             :name "USDGBP"}
+                                   "USDEUR" {:id 2
+                                             :name "USDEUR"}
+                                  }
+                          }))
 
 (defn simple-component []
   [:div {:style {:background "green"} }
@@ -20,9 +26,9 @@
     ])
 
 
-(defn fxtile []
+(defn fxtile [c]
   [:div {:style {:background "green" :width "300" :float "left" :border-style "solid"} }
-    [:h1 {:style {:text-align "center" :margin "0" }} (:text @app-state) ]
+    [:h1 {:style {:text-align "center" :margin "0" }} (:name c) ]
       [simple-component]
         [:div
           [t/timer-component "Buy"]
@@ -31,9 +37,10 @@
       ])
 
 (defn dashboard []
-  [:div {:style {:background "yellow" :width "100%"} }
-    [fxtile]
-    [fxtile]
+  [:div {:style {:width "100%"} }
+    (for [counter (vals (:counters @app-state))]
+      ^{:key (:name counter)} [fxtile counter]
+    )
   ]
 )
 
