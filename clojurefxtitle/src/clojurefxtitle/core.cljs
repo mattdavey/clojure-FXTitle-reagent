@@ -18,7 +18,7 @@
                                   }
                           }))
 
-(defn simple-component []
+(defn pricetitle-component []
   [:div {:style {:background "green"} }
 ;;   [:p.someclass {:style {:text-align "center" :background "yellow"}}
 ;;    [:strong  "USDGBP"]
@@ -29,10 +29,10 @@
 (defn fxtile [c]
   [:div {:style {:background "green" :width "300" :float "left" :border-style "solid"} }
     [:h1 {:style {:text-align "center" :margin "0" }} (:name c) ]
-      [simple-component]
+      [pricetitle-component]
         [:div
-          [t/timer-component "Buy"]
-          [t/timer-component "Sell"]
+          [t/price-component "Buy"]
+          [t/price-component "Sell"]
         ]
       ])
 

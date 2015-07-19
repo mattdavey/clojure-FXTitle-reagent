@@ -9,7 +9,7 @@
 (defn rand-price [val]
   (rand-nth val))
                 
-(defn timer-component [label]
+(defn price-component [label]
   (let [seconds-elapsed (atom 0)
        whole_number (range 95000 100000)]
     (fn []
