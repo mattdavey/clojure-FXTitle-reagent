@@ -7,7 +7,9 @@
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/clojurescript "0.0-3297"]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
-                 [reagent "0.5.0"]]
+                 [reagent "0.5.0"]
+                 [compojure "1.4.0"]
+                 ]
 
   :plugins [[lein-cljsbuild "1.0.5"]
             [lein-figwheel "0.3.5"]]
@@ -49,6 +51,7 @@
              ;; server, this is for simple ring servers, if this
              ;; doesn't work for you just run your own server :)
              ;; :ring-handler hello_world.server/handler
+             :ring-handler server/app
 
              ;; To be able to open files in your editor from the heads up display
              ;; you will need to put a script on your path.

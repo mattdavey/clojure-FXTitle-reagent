@@ -1,7 +1,7 @@
 (ns ^:figwheel-always clojurefxtitle.core
     (:require
               [reagent.core :as reagent :refer [atom]]
-              [clojurefxtitle.timer :as t]
+              [clojurefxtitle.pricecomponent :as t]
     ))
 
 (enable-console-print!)
@@ -15,11 +15,13 @@
                                              :name "USDGBP"}
                                    "USDEUR" {:id 2
                                              :name "USDEUR"}
+                                   "USDJPY" {:id 3
+                                             :name "USDJPY"}
                                   }
                           }))
 
 (defn pricetitle-component []
-  [:div {:style {:background "green"} }
+  [:div
 ;;   [:p.someclass {:style {:text-align "center" :background "yellow"}}
 ;;    [:strong  "USDGBP"]
 ;;    ]
