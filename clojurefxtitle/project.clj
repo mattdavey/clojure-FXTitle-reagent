@@ -7,8 +7,11 @@
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/clojurescript "0.0-3297"]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
+                 [javax.servlet/servlet-api "2.5"]
+                 [ring/ring-json "0.3.1"]
                  [reagent "0.5.0"]
                  [compojure "1.4.0"]
+                 [cljs-ajax "0.3.13"]
                  ]
 
   :plugins [[lein-cljsbuild "1.0.5"]

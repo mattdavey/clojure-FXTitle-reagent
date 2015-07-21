@@ -33,8 +33,8 @@
     [:h1 {:style {:text-align "center" :margin "0" }} (:name c) ]
       [pricetitle-component]
         [:div
-          [t/price-component "Buy"]
-          [t/price-component "Sell"]
+          [t/price-component (:name c)  "Buy"]
+          [t/price-component (:name c)  "Sell"]
         ]
       ])
 
